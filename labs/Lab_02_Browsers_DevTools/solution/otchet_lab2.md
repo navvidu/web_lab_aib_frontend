@@ -169,4 +169,9 @@ Referer: https://www.rgups.ru/services/time/
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 ```
 3. Мы выполнили запрос типа POST, который отправляет данные на сервер для обработки.
-4. Данные использованные для получения расписания: это URL-адрес ресурса, название факультета, номер курса и название группы.
+4. Данные использованные для получения расписания:
+- action: timetable
+- fac-id: 1
+- course-id: 3
+- group-id: 26420
+edu-type: internal
