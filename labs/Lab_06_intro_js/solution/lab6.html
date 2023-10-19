@@ -22,48 +22,45 @@
     */
 
     // №2
-    let x = 6;
-    let str = "100";
-    let b = new Boolean(true);
-    console.log(x + b);
-    console.log(x + str);
-    console.log(b + str);
-    console.log(str + x);
-    console.log(str + b);
-    console.log(x + str + b);
+    let number = 6;
+    let stringVar = "100";
+    let log = new Boolean(true);
+    console.log(number + log);
+    console.log(number + stringVar);
+    console.log(log + stringVar);
+    console.log(stringVar + number);
+    console.log(stringVar + log);
+    console.log(number + stringVar + log);
 
     // №3
-    let massiv = [];
+    let array = [];
     let n = 10;
-    function getRandomArray(min, max)
+    for(let i = 0; i < 10; i++)
     {
-    return Math.floor(Math.random() * 101) - 50;
+    array[i] = Math.floor(Math.random() * 101) - 50;
     }
-    console.log("Массив: ");
-    for (i = 0; i < n; i++) {
-        massiv[i] = getRandomArray(0, n);
-        console.log(massiv[i]);
-    }
-    const result = massiv.filter((number) => number > 0)
-    console.log("Отредактированный массив: ", result);
+    console.log(array);
+
+    const result = array.filter((number) => number > 0)
+    console.log("Sort array: ", result);
 
     // №4
     // 1
     function getRandomNumber() {
         return Math.floor(Math.random() * 101);
     }
-    let x1 = getRandomNumber();
-    console.log(x1);
-    function multiplyArrayByNumber(massiv, number) {
-    let result = [];
+    let num1 = getRandomNumber();
+    console.log(num1);
+    function multiplyArrayByNumber(array, number) {
+        let result = [];
     // 2
-    for (let i = 0; i < massiv.length; i++) {
-        result.push(massiv[i] * x1);
+        for (let i = 0; i < array.length; i++) {
+            result.push(array[i] * num1);
+        }
+         return result;
     }
-        return result;
-    }
-    let myMas= [1, 2, 3, 4, 5];
-    let multipliedArray = multiplyArrayByNumber(myMas, 2);
+    let myArr= [1, 2, 3, 4, 5];
+    let multipliedArray = multiplyArrayByNumber(myArr, 2);
     console.log(multipliedArray);
     // 3
     const generateRandomWord = () => {
