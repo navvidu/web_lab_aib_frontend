@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>JS</title>
+</head>
+<body>
+<script>
+    // №1
+    let apple=10;
+    alert(apple);
+    console.log(apple);
+    let condition = "Call of Duty";
+    console.log('Good game is ' + condition);
+    /* Вопросы:
+    1.Объявили через let. 
+    2.Доступны операторы для объявления переменных, такие как var, let и const. 
+    Они отличаются по области видимости и возможности изменения значения переменной.
+    3.Вывод сообщений пользователю, отладка кода.
+    4.Для вывода сообщений или значений в консоль разработчика браузера. Откладка кода.
+    */
+
+    // №2
+    let x = 6;
+    let str = "100";
+    let b = new Boolean(true);
+    console.log(x + b);
+    console.log(x + str);
+    console.log(b + str);
+    console.log(str + x);
+    console.log(str + b);
+    console.log(x + str + b);
+
+    // №3
+    let massiv = [];
+    let n = 10;
+    function getRandomArray(min, max)
+    {
+    return Math.floor(min + Math.random() * (max + 1 - min));
+    }
+    for (i = 0; i < n; i++) {
+        massiv[i] = getRandomArray(0, n);
+        console.log("Массив: ", massiv[i]);
+    }
+    const result = massiv.filter((number) => number > 0)
+    console.log("Отредактированный массив: ", result);
+
+    // №4
+    // 1
+    function getRandomNumber() {
+        return Math.floor(Math.random() * 101);
+    }
+    let x1 = getRandomNumber();
+    console.log(x1);
+    function multiplyArrayByNumber(massiv, number) {
+    let result = [];
+    // 2
+    for (let i = 0; i < massiv.length; i++) {
+        result.push(massiv[i] * x1);
+    }
+        return result;
+    }
+    let myMas= [1, 2, 3, 4, 5];
+    let multipliedArray = multiplyArrayByNumber(myMas, 2);
+    console.log(multipliedArray);
+    // 3
+    const generateRandomWord = () => {
+    const words = ["IT", "C++", "JavaScript", "Web", "Html", "Data", "SQL"];
+    const index = Math.floor(Math.random() * words.length);
+    const word = words[index];
+    return word;
+    };
+
+    // №5
+    // 1
+    const student = {};
+    // 2, 3
+    student.firstName = "Amelyakina";
+    student.surname = "Daria";
+    student.patronymic = "Sergeevna";
+    student.birthday = "17/06/2003";
+    student.hobby = "Web";
+    student.group = "IT";
+    student.info = function() {
+        return `FIO: ${this.surname} ${this.firstName} ${this.patronymic}\nBirthday: ${this.birthday}\nHobby: ${this.hobby}\nGroup:${this.group}`;
+    };
+    // 4
+    alert(student.info());
+    // 5
+    const salary = {
+    "Miroshnikova": 55000,
+    "Sazonova.": 45000,
+    "Sazonov": 45000,
+    "Amelyakina": 105500,
+    "Gerasimova": 70000,
+    "Alekseev": 17000,
+    "Semenova": 30500,
+    "Nazarov": 100500,
+    "Popov": 50500,
+    "Ivanov": 60000
+    };
+    // 6
+    let full_salary = 0;
+    for (let key in salary) {
+    full_salary += salary[key];
+    }
+    console.log("Общая зарплата сотрудников: ", full_salary);
+</script>
+</body>
+</html>
