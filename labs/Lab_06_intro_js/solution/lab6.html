@@ -12,7 +12,7 @@
     alert(apple);
     console.log(apple);
     let condition = "Web programming";
-    console.log('The best subject is ' + condition);
+    console.log('The Best subject is ' + condition);
     /* Вопросы:
     1.Объявили через let. 
     2.Доступны операторы для объявления переменных, такие как var, let и const. 
@@ -39,9 +39,10 @@
     {
     return Math.floor(Math.random() * 101) - 50;
     }
+    console.log("Массив: ");
     for (i = 0; i < n; i++) {
         massiv[i] = getRandomArray(0, n);
-        console.log("Массив: ", massiv[i]);
+        console.log(massiv[i]);
     }
     const result = massiv.filter((number) => number > 0)
     console.log("Отредактированный массив: ", result);
@@ -66,12 +67,11 @@
     console.log(multipliedArray);
     // 3
     const generateRandomWord = () => {
-    const words = ["IT", "C++", "JavaScript", "Web", "Html", "Data", "SQL"];
-    const index = Math.floor(Math.random() * words.length);
-    const word = words[index];
-    return word;
+        const words = ["IT", "C++", "JavaScript", "Web", "Html", "Data", "SQL"];
+        const index = Math.floor(Math.random() * words.length);
+        return words[index];
     };
-
+    console.log(generateRandomWord());
     // №5
     // 1
     const student = {};
