@@ -37,7 +37,7 @@
     let n = 10;
     function getRandomArray(min, max)
     {
-    return Math.floor(min + Math.random() * (max + 1 - min));
+    return Math.floor(Math.random() * 101) - 50;
     }
     for (i = 0; i < n; i++) {
         massiv[i] = getRandomArray(0, n);
