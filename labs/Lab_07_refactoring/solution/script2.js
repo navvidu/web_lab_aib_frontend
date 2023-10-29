@@ -19,5 +19,7 @@ arrayFruits.forEach((fruit)=>{
         case 'lemon':
             console.log('lemon yellow');
             break;
+        default:
+            console.log('Unknown fruit');
     }
 });
