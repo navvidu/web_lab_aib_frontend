@@ -1,9 +1,9 @@
 //№1
-var first  = prompt('var one');
-var second = prompt('var two');
-if (first === second)
+var firstNum  = prompt('var one');
+var secondNum = prompt('var two');
+if (firstNum === secondNum)
     console.log('equally');
 else console.log('not equally');
 var word = 'world';
-var result = first + word;
+var result = firstNum + word;
 console.log(result);
