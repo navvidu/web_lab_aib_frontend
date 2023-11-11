@@ -1,14 +1,13 @@
 
-let inputRed = document.getElementById('red');
-let inputGreen = document.getElementById('green');
-let inputBlue = document.getElementById('blue');
-let squareColor = document.getElementById('square');
+const inputRed = document.getElementById('red');
+const inputGreen = document.getElementById('green');
+const inputBlue = document.getElementById('blue');
+const squareColor = document.getElementById('square');
+const addButton = document.getElementById("button");
+const block = document.getElementById("block");
 let colorGeneration;
 let count = 0;
-let addButton = document.getElementById("button");
 let max = 15;
-
-let block = document.getElementById("block");
 
 function colorUpdate() {
     let redValue = inputRed.value;
@@ -28,11 +27,11 @@ addButton.addEventListener("click", ()=>{
         count++;
         return;
     }
-    let newBlock = document.createElement("div");
-    newBlock.className = "newBlock";
-    newBlock.id = count.toString();
-    newBlock.style.padding = '10%';
-    newBlock.style.backgroundColor = colorGeneration;
-    block.appendChild(newBlock);
+    let addBlock = document.createElement("div");
+    addBlock.className = "addBlock";
+    addBlock.id = count.toString();
+    addBlock.style.padding = '10%';
+    addBlock.style.backgroundColor = colorGeneration;
+    block.appendChild(addBlock);
     count++;
 });
