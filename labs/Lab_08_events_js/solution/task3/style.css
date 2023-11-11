@@ -1,0 +1,35 @@
+.block{
+    overflow: hidden;
+    display: flex;
+    gap: 5px;
+    min-height: 300px;
+    border: 1px solid black;
+    padding: 5px;
+}
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.class_input{
+    font-family:'Times New Roman', Times, serif, sans-serif;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input{
+    width: 300%;
+    display: flex;
+    flex-direction: column;
+}
+
+.square{
+    width: 300px;
+    height: 300px;
+    margin: 10%;
+    border: 1px solid black;
+}
+
+
