@@ -1,0 +1,25 @@
+main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.class_input{
+    font-family:'Times New Roman', Times, serif, sans-serif;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input{
+    width: 300%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.square{
+    width: 300px;
+    height: 300px;
+    margin: 10%;
+}
