@@ -10,10 +10,10 @@ let count = 0;
 let max = 15;
 
 function colorUpdate() {
-    let redValue = inputRed.value;
-    let greenValue = inputGreen.value;
-    let blueValue = inputBlue.value;
-    colorGeneration = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
+    let red = inputRed.value;
+    let green = inputGreen.value;
+    let blue = inputBlue.value;
+    colorGeneration = `rgb(${red}, ${green}, ${blue})`;
     colorSquare.style.backgroundColor = colorGeneration;
 }
 
