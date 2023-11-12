@@ -2,7 +2,7 @@
 const inputRed = document.getElementById('red');
 const inputGreen = document.getElementById('green');
 const inputBlue = document.getElementById('blue');
-const squareColor = document.getElementById('square');
+const colorSquare = document.getElementById('square');
 const addButton = document.getElementById("button");
 const block = document.getElementById("block");
 let colorGeneration;
@@ -14,7 +14,7 @@ function colorUpdate() {
     let greenValue = inputGreen.value;
     let blueValue = inputBlue.value;
     colorGeneration = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
-    squareColor.style.backgroundColor = colorGeneration;
+    colorSquare.style.backgroundColor = colorGeneration;
 }
 
 inputRed.addEventListener('input', colorUpdate);
