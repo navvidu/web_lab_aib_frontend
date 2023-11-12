@@ -5,7 +5,7 @@ let inputBlue = document.getElementById('blue');
 let colorSquare = document.getElementById('square');
 
 function colorUpdate() {
-    let red= inputRed.value;
+    let red = inputRed.value;
     let green = inputGreen.value;
     let blue = inputBlue.value;
     colorSquare.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
