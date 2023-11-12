@@ -5,10 +5,10 @@ let inputBlue = document.getElementById('blue');
 let colorSquare = document.getElementById('square');
 
 function colorUpdate() {
-    let redValue = inputRed.value;
-    let greenValue = inputGreen.value;
-    let blueValue = inputBlue.value;
-    colorSquare.style.backgroundColor = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
+    let red= inputRed.value;
+    let green = inputGreen.value;
+    let blue = inputBlue.value;
+    colorSquare.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
 }
 
 inputRed.addEventListener('input', colorUpdate);
