@@ -113,14 +113,21 @@ function Post({ id, username, text, onDelete }) {
     </div>
   );
 }
-
+// Айдишники
 function NewPostForm({ onAdd }) {
   const [username, setUsername] = useState('navvidu');
   const [text, setText] = useState('');
+  const [nextId, setNextId] = useState(1); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAdd({  username, text });
+    const newPost = {
+      id: nextId, 
+      username,
+      text
+    };
+    onAdd(newPost);
+    setNextId(nextId + 1);
     setUsername('navvidu');
     setText('');
   };
