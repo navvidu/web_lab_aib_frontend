@@ -247,16 +247,22 @@ function Post({ id, username, text, tags, onDelete }) {
     </div>
   );
 }
-
-function NewPostForm({ onAdd }) {
+// Айдишники
+let nextId = 1;
+function NewPostForm({ onAdd, posts }) {
   const [username, setUsername] = useState('navvidu');
   const [text, setText] = useState('');
   const [tags, setTags] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const post = { username, text, tags: tags.split(',') };
-    onAdd(post);
+    const newPost = {
+      id: nextId++, 
+      username,
+      text,
+      tags: tags.split(',')
+    };
+    onAdd(newPost);
     setUsername('navvidu');
     setText('');
     setTags('');
