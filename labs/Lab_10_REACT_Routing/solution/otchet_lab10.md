@@ -157,7 +157,164 @@ function App() {
 
 export default App;
 ```
+
+Файл App.css
+```shell
+body {
+  font-family: Arial, sans-serif;
+  background-color: #becfd4;
+  padding: 20px;
+}
+div{
+  text-decoration: none;
+  color: #97506a;
+}
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #97506a;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.user-info {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(201, 176, 176, 0.1);
+}
+
+.user-info p {
+  margin: 5px 0;
+}
+```
 ![Alt text](img/3.png)
 ![Alt text](img/4.png)
+#### Задание №3. 
+> - усложнить предыдущую стягиванием данных с сервера
 
+Файл User.js
+```shell
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
+const User = () => {
+  const { id } = useParams();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const response = await fetch(`https://swapi.dev/api/people/${id}/`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch');
+        }
+        const userData = await response.json();
+        setUser(userData);
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      }
+    };
+
+    fetchUserData();
+  }, [id]);
+
+  return (
+    <div>
+      <h2>О пользователе:</h2>
+      {user && (
+        <div>
+          <p>ID Пользователя: {id}</p>
+          <p>Имя: {user.name}</p>
+          <p>Рост:{user.height}</p>
+          <p>Вес:{user.mass}</p>
+          <p>Пол:{user.gender}</p>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default User;
+```
+
+Файл User.js
+```shell
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+const UsersList = () => {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const response = await fetch('https://swapi.dev/api/people/');
+        if (!response.ok) {
+          throw new Error('Failed to fetch');
+        }
+        const userData = await response.json();
+        setUsers(userData.results);
+      } catch (error) {
+        console.error('Error fetching users:', error);
+      }
+    };
+
+    fetchUsers();
+  }, []);
+
+  return (
+    <div>
+      <h2>Пользователи</h2>
+      <ul>
+        {users.map((user, index) => (
+          <li key={index + 1}>
+            <Link to={`/user/${index + 1}`}>{user.name}</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default UsersList;
+```
+Файл App.js
+```shell
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import UsersList from './UsersList';
+import User from './User';
+
+function App() {
+  return (
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<UsersList />} />
+          <Route path="/user/:id" element={<User />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
+```
+![Alt text](img/5.png)
+![Alt text](img/6.png)
