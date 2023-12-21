@@ -47,7 +47,6 @@ const Calendar = () => {
       }
       calendar.push(<tr key={i}>{week}</tr>);
     }
-
     return calendar;
   };
 
@@ -142,5 +141,4 @@ const Calendar = () => {
     </div>
   );
 };
-
 export default Calendar;
